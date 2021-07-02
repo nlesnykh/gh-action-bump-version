@@ -54,7 +54,7 @@ Toolkit.run(async (tools) => {
   }
   // case: if wording for PRE-RELEASE found
   else if (
-    messages.some((message) =>
+    preReleaseWords && messages.some((message) =>
       preReleaseWords.some((word) => {
         if (message.includes(word)) {
           foundWord = word

@@ -38,14 +38,14 @@ Toolkit.run(async (tools) => {
 
   // case: if wording for MAJOR found
   if (
-    messages.some(
+    majorWords && messages.some(
       (message) => /^([a-zA-Z]+)(\(.+\))?(!):/.test(message) || majorWords.some((word) => message.includes(word)),
     )
   ) {
     version = 'major'
   }
   // case: if wording for MINOR found
-  else if (messages.some((message) => minorWords.some((word) => message.includes(word)))) {
+  else if (minorWords && messages.some((message) => minorWords.some((word) => message.includes(word)))) {
     version = 'minor'
   }
   // case: if wording for PATCH found
